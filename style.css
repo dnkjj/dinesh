@@ -1,50 +1,203 @@
 /* Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; color:#333; line-height:1.6; font-size:16px; letter-spacing:0.3px;}
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:#f9f9f9;
+  color:#333;
+  line-height:1.6;
+  font-size:16px;
+  letter-spacing:0.3px;
+}
 a { text-decoration:none; color: inherit; }
 
 /* Header + Navbar */
-header {background:#003366;}
-.header-inner {display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:1em;}
-.logo {font-size:1.2rem; color:white; font-weight:bold;}
-.navbar a { margin-left:1em; color:white; font-weight:500; }
-.hero { padding:4em 1em; text-align:center; color:white; background:url('https://via.placeholder.com/1200x300') no-repeat center/cover;}
-.hero h1 {font-size:2.4rem; margin-bottom:0.5em;}
-.hero p {font-size:1.1rem; margin-bottom:1.5em;}
-.btn-primary {background:#0072ce; color:white; padding:0.9em 1.5em; border-radius:30px; transition:0.3s;}
-.btn-primary:hover {background:#005a9e;}
+header { background:#003366; }
+.header-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1200px;
+  margin:auto;
+  padding:1em;
+}
+.logo {
+  font-size:1.2rem;
+  color:white;
+  font-weight:bold;
+}
+.navbar a {
+  margin-left:1em;
+  color:white;
+  font-weight:500;
+}
+.hero {
+  padding: 5em 1em;
+  text-align: center;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1588776814546-bbc38b6d7f2e?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero h1,
+.hero p,
+.hero .btn-primary {
+  position: relative;
+  z-index: 2;
+}
+.hero h1 {
+  font-size:2.4rem;
+  margin-bottom:0.5em;
+}
+.hero p {
+  font-size:1.1rem;
+  margin-bottom:1.5em;
+}
+.btn-primary {
+  background:#0072ce;
+  color:white;
+  padding:0.9em 1.5em;
+  border-radius:30px;
+  transition:0.3s;
+  display:inline-block;
+}
+.btn-primary:hover { background:#005a9e; }
 
-/* Main sections */
-.container {max-width:960px; margin:auto; padding:2em 1em;}
-section {margin-bottom:4em;}
-section h2 {font-size:2rem; margin-bottom:0.8em; color:#003366;}
+/* Main Sections */
+.container {
+  max-width:960px;
+  margin:auto;
+  padding:2em 1em;
+}
+section {
+  margin-bottom:4em;
+}
+section h2 {
+  font-size:2rem;
+  margin-bottom:0.8em;
+  color:#003366;
+}
 
-/* Plans grid */
-.plans-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:1.5em;}
-.plan-box {background:white; padding:1.5em; box-shadow:0 0 8px rgba(0,0,0,0.05); border-radius:8px; text-align:center; transition:transform 0.3s;}
-.plan-box:hover {transform:translateY(-5px);}
+/* About Section */
+#about {
+  background: url('https://images.unsplash.com/photo-1503437313881-503a91226422?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  color: white;
+  padding: 4em 2em;
+  border-radius: 12px;
+}
+
+/* Plans Grid */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5em;
+}
+.plan-box {
+  background: white;
+  padding: 1.5em;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.plan-box:hover { transform: translateY(-5px); }
+
+/* Why LIC Section */
+#why {
+  background: #f0f8ff;
+  padding: 3em 2em;
+  border-radius: 12px;
+}
 
 /* Testimonials */
-.testimonials-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5em;}
-.testimonial {background:white; padding:1em 1.2em; box-shadow:0 0 8px rgba(0,0,0,0.05); border-radius:8px; text-align:center;}
-.testimonial img {border-radius:50%; width:80px; margin-bottom:0.8em;}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5em;
+}
+.testimonial {
+  background: white;
+  padding: 1em 1.2em;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  text-align: center;
+}
+.testimonial img {
+  border-radius: 50%;
+  width: 80px;
+  margin-bottom: 0.8em;
+}
 
-/* Form styling */
-form {display:flex; flex-direction:column; gap:1em;}
-form input, form textarea {padding:1em; border:1px solid #ccc; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1);}
-form button.btn-primary {box-shadow:0 2px 6px rgba(0,0,0,0.1); font-size:1em;}
+/* Contact Section */
+#contact {
+  background: #fff8f0;
+  padding: 3em 2em;
+  border-radius: 12px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+form input, form textarea {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+form button.btn-primary {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 1em;
+}
 
 /* Footer */
-footer {background:#003366; color:white; padding:2em 1em; margin-top:2em;}
-.footer-inner {display:flex; flex-wrap:wrap; justify-content:space-between; max-width:960px; margin:auto;}
-.hours h3 {font-size:1.1rem; margin-bottom:0.5em;}
-.footer-contact p {margin-top:0.5em;}
+footer {
+  background: #003366;
+  color: white;
+  padding: 2em 1em;
+  margin-top: 2em;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: auto;
+}
+.hours h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+}
+.footer-contact p {
+  margin-top: 0.5em;
+}
 
-/* WhatsApp button */
-.whatsapp-button {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:0.8em 1.5em; border-radius:30px; box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+/* WhatsApp Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
 
 /* Responsive */
 @media (max-width:768px) {
-  .header-inner, .footer-inner {flex-direction:column; align-items:center;}
-  .navbar {margin-top:1em;}
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar {
+    margin-top: 1em;
+  }
 }
